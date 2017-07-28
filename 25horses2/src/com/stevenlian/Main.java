@@ -1,16 +1,20 @@
+
+
 package com.stevenlian;
 
 import java.util.Arrays;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
 
-        int[] setArray1 = randomizeArrays(5);
-        int[] setArray2 = randomizeArrays(5);
-        int[] setArray3 = randomizeArrays(5);
-        int[] setArray4 = randomizeArrays(5);
-        int[] setArray5 = randomizeArrays(5);
+        int[] setArray1 = randomizeArray(5);
+        int[] setArray2 = randomizeArray(5);
+        int[] setArray3 = randomizeArray(5);
+        int[] setArray4 = randomizeArray(5);
+        int[] setArray5 = randomizeArray(5);
 
         System.out.println(Arrays.toString(setArray1));
         System.out.println(Arrays.toString(setArray2));
@@ -33,6 +37,9 @@ public class Main {
         System.out.println(Arrays.toString(setArray5));
 
         System.out.println();
+
+        race6(setArray1[4], setArray2[4], setArray3[4], setArray4[4], setArray5[4], 5);
+
 
         /*//race 6
         Integer[] integerArray = new Integer[5];
@@ -64,11 +71,35 @@ public class Main {
 
                     sortArray(array, i - 1);
 
-
                 }
             }
         }
         return array;
+
+    }
+
+    public static int race6(int a5, int b5, int c5, int d5, int e5, int n) {
+        int[] array = {a5, b5, c5, d5, e5};
+        int placeHolder;
+
+        if (n > -1) {
+
+//            for (int i = 0; i < 4; i++) {
+//                if (array[i + 1] < array[i]) {
+//                    placeHolder = array[i + 1];
+//                    array[i + 1] = array[i];
+//                    array[i] = placeHolder;
+
+                    sortArray(array, 5 - 1);
+
+                }
+
+
+        System.out.println(Arrays.toString(array));
+        System.out.println("Fastest horse: " + array[4]);
+
+        return e5;    //need to return e5,e4,e3
+
 
     }
 
@@ -86,19 +117,18 @@ public class Main {
 */
 
 
-
-
-    public static int[] randomizeArrays(int n) { //randomize arrays
-        int[] array2 = new int[n];
+    public static int[] randomizeArray(int n) { //randomize arrays
+        int[] array = new int[n];
         for (int j = 0; j < n; j++) {
 
             int newDouble = (int) (1000 * Math.random());
-            array2[j] = newDouble;
+            array[j] = newDouble;
 
         }
-        return array2;
+        return array;
 
     }
+
 
 
 }
